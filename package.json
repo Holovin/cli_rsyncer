@@ -1,0 +1,14 @@
+{
+  "name": "cli_rsyncer",
+  "version": "0.0.1",
+  "description": "Download all files from git status output with rsync",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Alex Holovin",
+  "license": "MIT",
+  "dependencies": {
+    "shelljs": "^0.8.4"
+  }
+}
