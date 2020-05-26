@@ -18,8 +18,17 @@ const fileList = output.stdout.split('\n');
 const fixedList = [];
 fileList.forEach(file => {
     // M.. → remove git status
-    fixedList.push(file.slice(3));
+    const fileName = file.slice(3);
+
+    if (fileName) {
+        fixedList.push(fileName);
+    }
 });
+
+if (fixedList.length === 0) {
+    console.log('--- SKIP: No files to sync ---\n');
+    process.exit(0);
+}
 
 fs.writeFileSync(RSYNC_FILES_PATH, fixedList.join('\n'));
 
