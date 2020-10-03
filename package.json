@@ -1,14 +1,23 @@
 {
   "name": "cli_rsyncer",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Download all files from git status output with rsync",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "npm run build && npm run run",
+    "run": "node dist/index.js",
+    "build": "tsc"
   },
   "author": "Alex Holovin",
   "license": "MIT",
   "dependencies": {
+    "lib-dd-helpers": "git+https://github.com/Holovin/lib-dd-helpers.git",
     "shelljs": "^0.8.4"
+  },
+  "devDependencies": {
+    "@types/nconf": "^0.10.0",
+    "@types/node": "^14.11.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
   }
 }
